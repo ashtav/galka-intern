@@ -31,6 +31,26 @@ class ProductNotifier extends StateNotifier<AsyncValue<List<Product>>>
       Errors.check(e, s, useList: true);
     }
   }
+
+  Future deleteProduct(int id) async {
+    try {
+      LzToast.overlay('Deleting product...');
+      await Future.delayed(1.s);
+
+      // get data
+      final data = state.value ?? [];
+
+      // remove data
+      data.removeWhere((e) => e.id == id);
+
+      // set data
+      state = AsyncValue.data(data);
+    } catch (e, s) {
+      Errors.check(e, s);
+    } finally {
+      LzToast.dismiss();
+    }
+  }
 }
 
 final productProvider = StateNotifierProvider.autoDispose<ProductNotifier,

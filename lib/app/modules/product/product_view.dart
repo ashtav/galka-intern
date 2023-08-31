@@ -55,7 +55,7 @@ class ProductView extends ConsumerWidget {
                 child: LzListView(
                   padding: Ei.zero,
                   children: todos.generate(
-                      (item, i) => ProductListItem(product: item, index: i)),
+                      (item, i) => ProductListItem(notifier: notifier, product: item, index: i)),
                 ),
               );
             },
