@@ -7,9 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazyui/lazyui.dart';
 
+import '../modules/login/custom_login_view.dart';
 import 'paths.dart';
 
 final GoRouter router = GoRouter(
+  initialLocation: Paths.customLogin,
   routes: <RouteBase>[
     GoRoute(
         path: Paths.login,
@@ -25,6 +27,11 @@ final GoRouter router = GoRouter(
         path: Paths.productDetails,
         builder: (BuildContext context, GoRouterState state) =>
             ProductDetailsView(product: state.extra as Product)),
+
+    GoRoute(
+        path: Paths.customLogin,
+        builder: (BuildContext context, GoRouterState state) =>
+            const CustomLoginView()),
   ],
 );
 
