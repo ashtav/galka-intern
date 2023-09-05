@@ -3,6 +3,7 @@ import 'package:appfetch/app/data/models/product.dart';
 import 'package:appfetch/app/modules/login/login_view.dart';
 import 'package:appfetch/app/modules/product/product_details_view.dart';
 import 'package:appfetch/app/modules/product/product_view.dart';
+import 'package:appfetch/app/modules/training/dashboard_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazyui/lazyui.dart';
@@ -11,7 +12,7 @@ import '../modules/login/custom_login_view.dart';
 import 'paths.dart';
 
 final GoRouter router = GoRouter(
-  initialLocation: Paths.customLogin,
+  initialLocation: Paths.dashboard,
   routes: <RouteBase>[
     GoRoute(
         path: Paths.login,
@@ -32,6 +33,11 @@ final GoRouter router = GoRouter(
         path: Paths.customLogin,
         builder: (BuildContext context, GoRouterState state) =>
             const CustomLoginView()),
+
+    GoRoute(
+        path: Paths.dashboard,
+        builder: (BuildContext context, GoRouterState state) =>
+            const DashboardView()),
   ],
 );
 
