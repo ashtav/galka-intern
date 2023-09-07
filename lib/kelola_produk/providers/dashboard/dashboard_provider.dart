@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class AppStateProvider extends StateNotifier<AppState> {
-  AppStateProvider() : super(AppState());
+class AppStateNotifier extends StateNotifier<AppState> {
+  AppStateNotifier() : super(AppState());
 
   void navigateTo(int index) {
     state = state.copyWith(page: index);
@@ -21,6 +21,6 @@ class AppState {
 }
 
 final appStateProvider =
-    StateNotifierProvider<AppStateProvider, AppState>((ref) {
-  return AppStateProvider();
+    StateNotifierProvider<AppStateNotifier, AppState>((ref) {
+  return AppStateNotifier();
 });
