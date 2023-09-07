@@ -1,5 +1,5 @@
 import 'package:appfetch/app/core/theme.dart';
-import 'package:appfetch/app/routes/router.dart';
+import 'package:appfetch/kelola_produk/routes/router.dart';
 import 'package:fetchly/fetchly.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
